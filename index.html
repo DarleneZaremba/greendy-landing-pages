@@ -1,12 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Raleway:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/styles.css">
     <title>Document</title>
 </head>
 <body>
-    
+    <header class="header">
+        <div class="container header-flex">
+
+        
+        <a href="" class="logo-link">
+            <svg class="logo-icon" width="48" height="25">
+                <use href="./images/symbol-defs.svg#icon-logo"></use>
+            </svg>
+        </a>
+
+        <button class="header-btn" data-menu-button>
+            <svg class="icon-menu-switch" width="24" height="24">
+                <use class="icon-burger" href="./images/symbol-defs.svg#icon-burger"></use>
+                <use class="icon-close" href="./images/symbol-defs.svg#icon-close"></use>
+            </svg>
+        </button>
+
+        <div class="menu" data-menu>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="" class="nav__link">Services</a></li>
+                    <li class="nav__item"><a href="" class="nav__link">Pricing</a></li>
+                    <li class="nav__item"><a href="" class="nav__link">FAQ</a></li>
+                    <li class="nav__item"><a href="" class="nav__link">Contact us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+
+       
+<div class="hero__content">
+    <h1 class="hero__title">Lorem ipsum dolor sit amet.</h1>
+
+    <p class="hero__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores officiis autem reiciendis quod sit quidem, possimus a odio dicta adipisci.</p>
+    <button class="hero__btn">Lorem, ipsum dolor.
+    </button>
+</div>
+
+
+    </section>
 </body>
+
+
+
+
+<script>
+    
+(() => {
+  const menuBtnRef = document.querySelector("[data-menu-button]");
+  const mobileMenuRef = document.querySelector("[data-menu]");
+
+  menuBtnRef.addEventListener("click", () => {
+    const expanded =
+      menuBtnRef.getAttribute("aria-expanded") === "true" || false;
+
+    menuBtnRef.classList.toggle("is-open");
+    menuBtnRef.setAttribute("aria-expanded", !expanded);
+
+    mobileMenuRef.classList.toggle("is-open");
+  });
+})();
+</script>
 </html>
